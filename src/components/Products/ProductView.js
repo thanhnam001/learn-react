@@ -14,7 +14,6 @@ const Product = () => {
   const [mainView, setMainView] = useState(sneaker1);
   const [slideView, setSlideView] = useState(false);
   const imageSet = [sneaker1, sneaker2, sneaker3, sneaker4];
-  // console.log(slides);
   return (
     <div className="product-container">
       <div className="content-left">

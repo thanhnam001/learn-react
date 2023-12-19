@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import AddProduct from "./components/AddProduct";
 import Product from "./components/Products/ProductView";
 import Nav from "./components/Navigation/Navigation";
+import Weather from "./components/Weather/Weather";
 import {
   BrowserRouter as Router,
   // Switch,
@@ -12,14 +13,16 @@ import {
   Route,
   // Link,
 } from "react-router-dom";
+import OTP from "./components/OTP/OTP";
 function App() {
   return (
     <Router>
       <Nav />
       <Routes>
         <Route path="/product" element={<Product />} />
-        <Route path="/weather" element={<div>weather app</div>} />
+        <Route path="/weather" element={<Weather />} />
         <Route path="/about" element={<div>I'm Eric</div>} />
+        <Route path="/otp" element={<OTP />} />
         <Route
           path="/"
           element={
@@ -45,6 +48,7 @@ function App() {
             </div>
           }
         />
+        <Route path="*" element={<div>404 not found</div>} />
       </Routes>
     </Router>
   );
