@@ -14,6 +14,7 @@ import {
   // Link,
 } from "react-router-dom";
 import OTP from "./components/OTP/OTP";
+import WeatherByLocation from "./components/Weather/WeatherByLocation";
 function App() {
   return (
     <Router>
@@ -47,6 +48,10 @@ function App() {
               </div>
             </div>
           }
+        />
+        <Route
+          path="/weather/detail/:location"
+          element={<WeatherByLocation />}
         />
         <Route path="*" element={<div>404 not found</div>} />
       </Routes>

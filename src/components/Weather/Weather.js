@@ -1,7 +1,8 @@
 import axios from "axios";
 import React from "react";
 import Search from "./Search";
-import "./Search.scss";
+import "./Weather.scss";
+import WeatherByLocation from "./WeatherByLocation";
 
 class Weather extends React.Component {
   state = {
@@ -21,6 +22,8 @@ class Weather extends React.Component {
     return (
       <div className="weather-app-container">
         <Search />
+        <hr/>
+        <WeatherByLocation location={'2717932'}/>
       </div>
     );
   }

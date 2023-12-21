@@ -1,0 +1,52 @@
+.weather-app-container {
+  .search-weather-container {
+    .search-input {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding-top: 10px;
+      height: 28px;
+      input {
+        padding: 0 5px;
+      }
+    }
+    .result-container {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+  }
+}
+
+.weather-by-location-container {
+  padding: 15px;
+  font-size: large;
+  .weather-list {
+    display: flex;
+    gap: 15px;
+    min-width: 100px;
+    flex-wrap: wrap;
+    .weather-state-container {
+      width: 100%;
+      .text-state {
+        font-weight: 600;
+      }
+    }
+    .weather-day-container {
+      gap: 25px;
+      padding: 25px;
+      .current-time {
+        padding: 0 20%;
+      }
+    }
+    .weather-forecast-container {
+      display: flex;
+      gap: 25px;
+      padding: 25px;
+    }
+  }
+}
