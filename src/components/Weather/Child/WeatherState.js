@@ -4,7 +4,7 @@ const WeatherState = (props) => {
   return (
     <div className="weather-state-container">
       <div className="image-state">
-        <img src={props.weatherState.icon} />
+        <img src={props.weatherState.icon} alt="weather-state-icon"/>
       </div>
       <div className="text-state">{props.weatherState.text}</div>
     </div>
