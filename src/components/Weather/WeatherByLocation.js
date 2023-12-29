@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import _ from "lodash";
 import WeatherDay from "./Child/WeatherDay";
@@ -9,6 +9,10 @@ import "./Weather.scss";
 const WeatherByLocation = (props) => {
   let { location } = useParams(); // || props.location;
   const [forecastWeatherInfo, setForecastWeatherInfo] = useState([]);
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   useEffect(() => {
     const getForecastWeatherByLocation = async () => {
       if (!location) location = props.location;
@@ -27,17 +31,20 @@ const WeatherByLocation = (props) => {
     getForecastWeatherByLocation();
   }, [location]);
   return (
-    <div className="weather-by-location-container">
-      {!_.isEmpty(forecastWeatherInfo) && (
-        <div className="weather-list">
-          <div className="location-name">{`${forecastWeatherInfo.location.name} - ${forecastWeatherInfo.location.country}`}</div>
-          <WeatherDay weatherInfo={forecastWeatherInfo} />
-          <WeatherForecast
-            forecastInfo={forecastWeatherInfo.forecast.forecastday}
-          />
-        </div>
-      )}
-    </div>
+    <>
+      {location && <button onClick={() => handleGoBack()}>Go back</button>}
+      <div className="weather-by-location-container">
+        {!_.isEmpty(forecastWeatherInfo) && (
+          <div className="weather-list">
+            <div className="location-name">{`${forecastWeatherInfo.location.name} - ${forecastWeatherInfo.location.country}`}</div>
+            <WeatherDay weatherInfo={forecastWeatherInfo} />
+            <WeatherForecast
+              forecastInfo={forecastWeatherInfo.forecast.forecastday}
+            />
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

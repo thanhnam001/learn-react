@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux'
-import cakeReducer from './Cake/CakeReducer'
-import userReducer from './User/userReducer'
+import { combineReducers } from "redux";
+import cakeReducer from "./Cake/CakeReducer";
+import iceCreamReducer from "./IceCream/IceCreamReducer";
+import userReducer from "./User/userReducer";
 
 const rootReducer = combineReducers({
   cake: cakeReducer,
-  user: userReducer
-})
+  iceCream: iceCreamReducer,
+  user: userReducer,
+});
 
-export default rootReducer
+export default rootReducer;

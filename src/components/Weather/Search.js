@@ -33,6 +33,9 @@ const Search = () => {
           placeholder="Type location here"
           value={inputLocation}
           onChange={(event) => setInputLocation(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") handleSearchBtn();
+          }}
         />
         <button
           onClick={() => {
